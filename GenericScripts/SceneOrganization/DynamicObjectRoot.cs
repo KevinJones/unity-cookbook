@@ -4,6 +4,7 @@ using System.Collections;
 /// <summary>
 /// A singleton allowing the attached GameObject to serve an empty root object for dynamically allocated GameObjects.
 /// </summary>
+/// Access this GameObject with DynamicObjectRoot.Instance.
 public class DynamicObjectRoot : MonoBehaviour {
 	
 	private static Transform root;
