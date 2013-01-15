@@ -21,6 +21,30 @@ public static class RandomExtensions {
 	/// </summary>
 	public static float GetBinomialRange(float min, float max)
 	{
-		return Random.Range(min, max) - Random.Range (min, max);
+		return (Random.Range(min, max) + Random.Range (min, max))/2.0f;
 	}
+	
+	/// <summary>
+	/// Returns the result of rolling n m-sided dice.
+	/// </summary>
+	/// If either diceCount or diceSides is less than one, returns 0.
+	public static int RollDice(int diceCount, int diceSides)
+	{
+		// return zero for exceptional cases.
+		if (diceCount < 1 || diceSides < 1)
+		{
+			return 0;
+		}
+		
+		sum = 0;
+		
+		int ii = 0;
+		while (ii < diceCount)
+		{
+			sum += Random.Range(1, diceSides);
+		}
+		
+		return sum;
+	}
+	
 }
