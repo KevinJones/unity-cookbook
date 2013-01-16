@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 /// <summary>
 /// Helpful random number features not implemented by Unity.
@@ -36,7 +37,7 @@ public static class RandomExtensions {
 			return 0;
 		}
 		
-		sum = 0;
+		int sum = 0;
 		
 		int ii = 0;
 		while (ii < diceCount)
@@ -46,5 +47,13 @@ public static class RandomExtensions {
 		
 		return sum;
 	}
-	
+
+    /// <summary>
+    /// Returns a random element from the list.
+    /// </summary>
+    public static T PickOne<T>(List<T> list)
+    {
+        int ii = Random.Range(0, list.Count);
+        return list[ii];
+    }
 }
